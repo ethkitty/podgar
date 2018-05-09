@@ -364,7 +364,7 @@ io.on('connection', function (socket) {
             // TODO: Actually log incorrect passwords.
               console.log('[ADMIN] ' + currentPlayer.name + ' attempted to log in with incorrect password.');
               socket.emit('serverMSG', 'Password incorrect, attempt logged.');
-             pool.query('INSERT INTO logging SET name=' + currentPlayer.name + ', reason="Invalid login attempt as admin"');
+            // pool.query('INSERT INTO logging SET name=' + currentPlayer.name + ', reason="Invalid login attempt as admin"');
         }
     });
 
@@ -622,7 +622,8 @@ function gameloop() {
             if(users[i].type == 'player') {
                 topUsers.push({
                     id: users[i].id,
-                    name: users[i].name
+                    name: users[i].name,
+                    mass: users[i].massTotal
                 });
             }
         }
