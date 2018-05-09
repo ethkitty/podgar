@@ -218,9 +218,9 @@ function setupSocket(socket) {
             status += '<br />';
             if (leaderboard[i].id == player.id){
                 if(leaderboard[i].name.length !== 0)
-                    status += '<span class="me">' + (i + 1) + '. ' + leaderboard[i].name + " " + leaderboard[i].mass + "</span>";
+                    status += '<span class="me">' + (i + 1) + '. ' + leaderboard[i].name + " " + leaderboard[i].mass + " ETHOS </span>";
                 else
-                    status += '<span class="me">' + (i + 1) + ". An unnamed cell " + leaderboard[i].mass + "</span>";
+                    status += '<span class="me">' + (i + 1) + ". An unnamed cell " + leaderboard[i].mass + "  ETHOS</span>";
             } else {
                 if(leaderboard[i].name.length !== 0)
                     status += (i + 1) + '. ' + leaderboard[i].name + " " + leaderboard[i].mass;
