@@ -218,19 +218,25 @@ function setupSocket(socket) {
             status += '<br />';
             if (leaderboard[i].id == player.id){
                 if(leaderboard[i].name.length !== 0)
-                    status += '<span class="me">' + (i + 1) + '. ' + leaderboard[i].name + "</span>";
+                    status += '<span class="me">' + (i + 1) + '. ' + leaderboard[i].name + " " + leaderboard[i].mass + "</span>";
                 else
-                    status += '<span class="me">' + (i + 1) + ". An unnamed cell</span>";
+                    status += '<span class="me">' + (i + 1) + ". An unnamed cell " + leaderboard[i].mass + "</span>";
             } else {
                 if(leaderboard[i].name.length !== 0)
-                    status += (i + 1) + '. ' + leaderboard[i].name;
+                    status += (i + 1) + '. ' + leaderboard[i].name + " " + leaderboard[i].mass;
                 else
-                    status += (i + 1) + '. An unnamed cell';
+                    status += (i + 1) + '. An unnamed cell' + " " + leaderboard[i].mass;
             }
         }
+        console.log(leaderboard);
         //status += '<br />Players: ' + data.players;
+        //document.getElementById('status').innerHTML = "<span>" + status;
         document.getElementById('status').innerHTML = status;
+
+
     });
+
+  //  setInterval(function(){document.getElementById('status').innerHTML = document.getElementById('status').innerHTML;}, 1);
 
     socket.on('serverMSG', function (data) {
         window.chat.addSystemLine(data);
